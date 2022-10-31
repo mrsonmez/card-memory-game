@@ -5,7 +5,7 @@ export default function Header() {
   const items = useSelector((state) => state.cards);
   const points = useSelector((state) => state.points);
   const clone = [...items];
-  const finder = clone.find((item) => item.completed == false);
+  const finder = clone.filter((item) => item.completed == false);
   const dispatch = useDispatch();
   const resetgame = () => {
     dispatch(resetGame());
